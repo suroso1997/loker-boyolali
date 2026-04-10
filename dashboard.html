@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>LOKERBOYOLALI - Dashboard Fix Presisi</title>
+    <style>
+        body { 
+            margin: 0; padding: 0; background: #0044ff; 
+            background: linear-gradient(180deg, #001a66 0%, #0055ff 100%);
+            font-family: Arial, sans-serif; 
+        }
+
+        /* HEADER */
+        .header { 
+            background: #001a66; display: flex; justify-content: space-between; 
+            padding: 5px 15px; border-bottom: 2px solid #ffd700; 
+        }
+        .logo { color: #ffd700; font-weight: bold; font-style: italic; }
+        .user-nav { display: flex; gap: 5px; }
+        .nav-item { border: 1px solid white; color: white; padding: 2px 10px; font-size: 11px; }
+
+        /* BARIS GOLD ATAS + MEGAFON */
+        .gold-bar-top {
+            background: linear-gradient(to bottom, #ffffff, #ffd700, #b8860b);
+            height: 35px; border-bottom: 2px solid #000;
+            display: flex; align-items: stretch;
+        }
+        .megaphone-container {
+            background: #0044ff; /* Kotak biru untuk megafon */
+            width: 70px; display: flex; justify-content: center; align-items: center;
+            border-right: 2px solid #ffd700; border-bottom: 2px solid #000;
+        }
+        /* Ikon Megafon (Toa) */
+        .megaphone-container::after {
+            content: '📢'; font-size: 20px;
+        }
+        .marquee-container { flex-grow: 1; display: flex; align-items: center; font-weight: bold; color: #001a66; }
+
+        /* CONTAINER UTAMA */
+        .main-frame {
+            margin: 15px; border: 4px solid #00aaff;
+            display: flex; flex-direction: column;
+        }
+
+        /* GRID LAYOUT */
+        .content-section {
+            display: grid; grid-template-columns: 100px 1fr 100px; gap: 0;
+        }
+
+        /* SIDEBAR IKLAN (PERSEGI PANJANG VERTIKAL) */
+        .ad-slot {
+            background: #0033cc; border: 1px solid #00aaff;
+            display: flex; justify-content: center; align-items: center;
+            background-image: linear-gradient(135deg, rgba(255,255,255,0.1) 25%, transparent 25%), 
+                              linear-gradient(225deg, rgba(255,255,255,0.1) 25%, transparent 25%);
+            background-size: 30px 30px;
+        }
+        .ad-slot img { width: 100%; height: 100%; object-fit: cover; }
+        .ad-text { writing-mode: vertical-rl; transform: rotate(180deg); color: white; font-weight: bold; text-align: center; }
+
+        /* GRID KOTAK VIP & REGULER (PERSEGI) */
+        .box-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+        }
+        .square-box {
+            background: #000; border: 1px solid #00aaff;
+            aspect-ratio: 1 / 1; /* INI KUNCINYA AGAR KOTAK SEMPURNA */
+            position: relative; display: flex; justify-content: center; align-items: center;
+        }
+        .square-box img { width: 100%; height: 100%; object-fit: cover; }
+        .vip-tag { position: absolute; bottom: 10px; right: 15px; color: #444; font-size: 2rem; font-weight: bold; }
+
+        /* GARIS EMAS TENGAH */
+        .gold-divider {
+            height: 15px;
+            background: linear-gradient(to bottom, #ffffff, #ffd700, #b8860b);
+            border-top: 2px solid #000; border-bottom: 2px solid #000;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo">LOKERBOYOLALI</div>
+        <div class="user-nav">
+            <div class="nav-item">USERNAME</div>
+            <div class="nav-item">TOT. COIN SAYA</div>
+            <div class="nav-item" style="background:red">LOG OUT</div>
+        </div>
+    </div>
+
+    <div class="gold-bar-top">
+        <div class="megaphone-container"></div>
+        <div class="marquee-container">
+            <marquee>KAMI TIDAK PERNAH MEMINTA BIAYA APAPUN DAN DENGAN ALASAN APAPUN TERKAIT PENDAFTAR DI PERUSAHAAN!!!</marquee>
+        </div>
+    </div>
+
+    <div class="main-frame">
+        <div class="content-section">
+            <div class="ad-slot"><img src="iklan_kiri_1.jpg"></div>
+            <div class="box-grid">
+                <div class="square-box"><img src="v1.jpg"><span class="vip-tag">VIP</span></div>
+                <div class="square-box"><img src="v2.jpg"><span class="vip-tag">VIP</span></div>
+                <div class="square-box"><img src="v3.jpg"><span class="vip-tag">VIP</span></div>
+                <div class="square-box"><img src="v4.jpg"><span class="vip-tag">VIP</span></div>
+                <div class="square-box"><img src="v5.jpg"><span class="vip-tag">VIP</span></div>
+                <div class="square-box"><img src="v6.jpg"><span class="vip-tag">VIP</span></div>
+            </div>
+            <div class="ad-slot"><img src="iklan_kanan_1.jpg"></div>
+        </div>
+
+        <div class="gold-divider"></div>
+
+        <div class="content-section">
+            <div class="ad-slot"><img src="iklan_kiri_2.jpg"></div>
+            <div class="box-grid">
+                <div class="square-box"><img src="r1.jpg"></div>
+                <div class="square-box"><img src="r2.jpg"></div>
+                <div class="square-box"><img src="r3.jpg"></div>
+                <div class="square-box"><img src="r4.jpg"></div>
+                <div class="square-box"><img src="r5.jpg"></div>
+                <div class="square-box"><img src="r6.jpg"></div>
+            </div>
+            <div class="ad-slot"><img src="iklan_kanan_2.jpg"></div>
+        </div>
+    </div>
+
+</body>
+</html>
