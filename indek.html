@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOKERBOYOLALI - Edisi Berkah Ramadhan 2026</title>
+    <style>
+        :root {
+            --gold: #ffcc00;
+            --gold-dark: #b38f00;
+            --blue-nav: #0046b8;
+            --bg-deep: #050505;
+        }
+
+        body {
+            margin: 0; padding: 0;
+            background-color: var(--bg-deep);
+            background-image: 
+                linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
+                url('https://www.transparenttextures.com/patterns/islamic-art.png'); 
+            background-attachment: fixed;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+        }
+
+        /* --- HEADER & LOGIN BAR --- */
+        .top-nav {
+            background: linear-gradient(to bottom, #222, #000);
+            border-bottom: 3px solid var(--gold);
+            padding: 10px 20px;
+            display: flex; justify-content: space-between; align-items: center;
+            position: sticky; top: 0; z-index: 1000;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
+        .logo { 
+            font-size: 26px; font-weight: bold; color: var(--gold); 
+            text-shadow: 2px 2px #000; letter-spacing: 1px; 
+        }
+        .logo span { font-size: 12px; color: #fff; display: block; font-weight: normal; margin-top: -5px; }
+        
+        .user-panel { display: flex; gap: 15px; align-items: center; }
+        .coin-box { 
+            background: #000; border: 1px solid var(--gold); padding: 5px 15px; 
+            border-radius: 5px; color: var(--gold); font-weight: bold; box-shadow: inset 0 0 10px rgba(255,204,0,0.2);
+        }
+
+        .login-inputs input { background: #fff; border: 1px solid var(--gold); padding: 5px; width: 110px; border-radius: 3px; font-size: 12px; }
+        .btn-gold { background: linear-gradient(to bottom, var(--gold), var(--gold-dark)); border: 1px solid #fff; padding: 5px 15px; font-weight: bold; cursor: pointer; border-radius: 3px; font-size: 12px; text-transform: uppercase; }
+
+        /* --- MARQUEE RUNNING TEXT --- */
+        .marquee-container {
+            background: var(--gold); color: #000; display: flex; align-items: center;
+            height: 45px; border-bottom: 2px solid #fff; box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+        }
+        .megaphone { background: #000; color: #fff; padding: 0 20px; height: 100%; display: flex; align-items: center; border-right: 3px solid #fff; font-size: 22px; }
+        .marquee-text { font-weight: 900; font-size: 15px; flex: 1; text-transform: uppercase; }
+
+        /* --- LAYOUT 3 KOLOM --- */
+        .main-wrapper {
+            display: grid;
+            grid-template-columns: 240px 1fr 240px;
+            max-width: 1600px;
+            margin: 20px auto;
+            gap: 20px;
+            padding: 0 20px;
+        }
+
+        /* Kolom Kiri */
+        .side-left { display: flex; flex-direction: column; gap: 12px; }
+        .nav-pill {
+            background: rgba(17, 17, 17, 0.8);
+            backdrop-filter: blur(5px);
+            border: 1px solid var(--gold);
+            padding: 15px; border-radius: 30px 5px 30px 5px;
+            color: #fff; text-decoration: none; text-align: center;
+            font-weight: bold; font-size: 14px; transition: 0.3s;
+            box-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+        }
+        .nav-pill:hover { background: var(--gold) !important; color: #000; transform: translateX(5px); }
+
+        /* Kolom Tengah */
+        .center-area { 
+            background: rgba(0, 0, 0, 0.75); 
+            padding: 20px; 
+            border: 1px solid rgba(255, 204, 0, 0.2); 
+            border-radius: 10px; 
+            backdrop-filter: blur(10px); 
+        }
+        .hero-banner { 
+            height: 250px; 
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://img.freepik.com/free-vector/ramadan-kareem-greeting-card-design_1017-30647.jpg'); 
+            background-size: cover; background-position: center;
+            border: 2px solid var(--gold); border-radius: 10px; margin-bottom: 25px; 
+            display: flex; flex-direction: column; align-items: center; justify-content: center; 
+            font-size: 24px; font-weight: bold; color: var(--gold); text-align: center;
+        }
+
+        /* --- VIP BOX DENGAN GAMBAR --- */
+        .vip-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 25px; }
+        .vip-box { 
+            background-color: #000; 
+            background-size: cover; 
+            background-position: center;
+            border: 1px solid #444; 
+            height: 150px; 
+            border-radius: 8px; 
+            position: relative; 
+            transition: 0.3s; 
+        }
+        .vip-box:hover { border-color: var(--gold); box-shadow: 0 0 15px var(--gold); transform: scale(1.02); }
+        .vip-box::after { content: "🌙"; position: absolute; bottom: 10px; right: 15px; color: rgba(255,204,0,0.3); font-size: 20px; font-weight: 900; }
+
+        /* Tabel Info */
+        .data-table { width: 100%; border-collapse: collapse; background: #000; border: 2px solid var(--gold-dark); margin-top: 10px; }
+        .data-table th { background: linear-gradient(to bottom, var(--gold), var(--gold-dark)); color: #000; padding: 12px; font-size: 14px; text-transform: uppercase; }
+        .data-table td { padding: 12px; border-bottom: 1px solid #222; text-align: center; font-size: 13px; font-weight: bold; }
+        .data-table tr:hover { background: rgba(255, 204, 0, 0.15); cursor: pointer; }
+
+        .badge-new { color: #ff3300; animation: blink 1s infinite; }
+        @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+
+        /* Kolom Kanan */
+        .side-right { display: flex; flex-direction: column; gap: 20px; }
+        .widget { 
+            background: rgba(17, 17, 17, 0.8); 
+            backdrop-filter: blur(5px);
+            border: 1px solid var(--gold); 
+            padding: 20px; border-radius: 8px; text-align: center; 
+        }
+
+        /* Floating Button - Chat Admin */
+        .floating-wa {
+            position: fixed; bottom: 20px; right: 20px;
+            background: linear-gradient(to bottom, var(--gold), var(--gold-dark)); 
+            color: black; padding: 10px 20px;
+            border-radius: 50px; font-weight: bold; text-decoration: none;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.8); z-index: 999;
+            display: flex; align-items: center; gap: 10px;
+            border: 2px solid white;
+            transition: 0.3s;
+        }
+        .floating-wa:hover { transform: scale(1.1); }
+        .wa-icon { width: 35px; height: 35px; object-fit: contain; }
+
+        .footer { margin-top: 60px; padding: 50px; background: #000; border-top: 3px solid var(--gold); text-align: center; }
+    </style>
+</head>
+<body>
+
+<div class="top-nav">
+    <div class="logo">LOKERBOYOLALI <span>Portal Berkah Loker Edisi Ramadhan</span></div>
+    <div class="user-panel">
+        <div class="coin-box">🌙 <span id="val-coin">5,240</span> KOIN</div>
+        <div class="login-inputs">
+            <input type="text" placeholder="Username">
+            <input type="password" placeholder="Password">
+            <button class="btn-gold">LOGIN</button>
+        </div>
+    </div>
+</div>
+
+<div class="marquee-container">
+    <div class="megaphone">🕌</div>
+    <marquee class="marquee-text" scrollamount="8">
+        Marhaban Ya Ramadhan 1447H - Tingkatkan amal dengan berbagi info loker di Boyolali dan dapatkan koin keberkahan yang bisa dicairkan jadi uang tunai!
+    </marquee>
+</div>
+
+<div class="main-wrapper">
+    <div class="side-left">
+        <a href="#" class="nav-pill">🏠 DASHBOARD BERKAH</a>
+        <a href="#" class="nav-pill">💰 WD KOIN / SEDEKAH</a>
+        <a href="#" class="nav-pill">📝 KIRIM INFO LOKER</a>
+        <a href="#" class="nav-pill">💎 MEMBER VIP</a>
+        <a href="#" class="nav-pill">
+            <img src="chat admin.png" style="width: 25px; height: 25px;" alt=""> HUBUNGI ADMIN
+        </a>
+
+        <div class="widget" style="margin-top: 15px; border-style: dashed;">
+            <span style="color: var(--gold); font-size: 12px;">ESTIMASI IMSAK (BYL)</span><br>
+            <strong style="font-size: 20px;">04:12 WIB</strong>
+        </div>
+    </div>
+
+    <div class="center-area">
+        <div class="hero-banner">
+            <div style="font-size: 36px; text-shadow: 2px 2px #000;">MARHABAN YA RAMADHAN</div>
+            <div style="font-weight: normal; font-size: 16px; color: #fff;">Berbagi Info Kerja, Menebar Kebaikan</div>
+        </div>
+
+        <div class="vip-grid">
+            <div class="vip-box" style="background-image: url('vip1.jpg');"></div>
+            <div class="vip-box" style="background-image: url('vip2.jpg');"></div>
+            <div class="vip-box" style="background-image: url('vip3.jpg');"></div>
+            <div class="vip-box" style="background-image: url('vip4.png');"></div>
+            <div class="vip-box" style="background-image: url('vip5.jpg');"></div>
+            <div class="vip-box" style="background-image: url('vip6.png');"></div>
+        </div>
+
+        <table class="data-table">
+            <thead>
+                <tr><th>WAKTU</th><th>POSISI</th><th>NAMA PERUSAHAAN</th><th>LOKASI</th></tr>
+            </thead>
+            <tbody>
+                <tr><td class="badge-new">BARU</td><td>OPERATOR PRODUKSI</td><td>PT. SARI WARNA ASLI</td><td>TERAS</td></tr>
+                <tr><td>15 MNT</td><td>ADMIN GUDANG</td><td>PT. PAN BROTHERS</td><td>MOJOSONGO</td></tr>
+                <tr><td>1 JAM</td><td>QUALITY CONTROL</td><td>PT. ECO SMART GARMENT</td><td>SAMBI</td></tr>
+                <tr><td>2 JAM</td><td>DRIVER LOGISTIK</td><td>CV. BOYOLALI MAKMUR</td><td>AMPEL</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="side-right">
+        <div class="widget">
+            <span style="color: var(--gold); font-size: 12px;">LIVE PENCAIRAN BERKAH:</span>
+            <marquee direction="up" scrollamount="2" style="height: 70px; font-size: 12px; margin-top: 10px;">
+                User suroso... WD Rp 10.000 ✅<br>
+                User romy... WD Rp 25.000 ✅<br>
+                User boyo... WD Rp 50.000 ✅<br>
+                User loker... WD Rp 15.000 ✅
+            </marquee>
+        </div>
+
+        <div class="widget" style="background: #004d00; border-color: #fff;">
+            <strong style="color: #fff; font-size: 14px;">PROGRAM SEDEKAH</strong><br>
+            <p style="font-size: 10px; margin-top: 5px;">Sebagian keuntungan iklan disalurkan ke panti asuhan di Boyolali.</p>
+        </div>
+
+        <div class="widget" style="background: #000; border-color: #333;">
+            <span style="color: #666; font-size: 11px;">MEMBER ONLINE:</span><br>
+            <strong style="font-size: 22px; color: var(--gold);">1.402</strong>
+        </div>
+    </div>
+</div>
+
+<a href="#" class="floating-wa">
+    <img src="chat admin.png" class="wa-icon" alt="">
+    CHAT ADMIN
+</a>
+
+<div class="footer">
+    <h2 style="color: var(--gold); letter-spacing: 3px;">LOKERBOYOLALI</h2>
+    <p style="max-width: 800px; margin: auto; color: #777; font-size: 14px; line-height: 1.6;">
+        Copyright &copy; 2026 - Portal Komunitas Informasi Lowongan Kerja Boyolali. <br>
+        Semoga berkah di bulan suci Ramadhan. Bantu sesama, dapatkan pahala dan koinnya!
+    </p>
+</div>
+
+</body>
+</html>
